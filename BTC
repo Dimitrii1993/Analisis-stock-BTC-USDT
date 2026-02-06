@@ -1,2 +1,15 @@
 print('hi world')
 print('hi world')
+import numpy as np 
+import pandas as pd 
+import matplotlib as mpl 
+import matplotlib.pyplot as plt 
+import matplotlib.dates as mdates
+import seaborn as sns 
+import plotly.express as px
+
+btc_1 = pd.read_csv('btcusd.csv')
+
+btcusd = btc_1.copy()
+
+btc_1
