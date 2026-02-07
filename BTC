@@ -102,3 +102,10 @@ chart[1].grid(True)
 chart[1].xaxis.set_major_locator(mdates.YearLocator())
 chart[1].set_title(f'График объема {name} за {year_min} - {year_max} год', fontdict = {'family': 'Times New Roman', 'size': 12, 'weight': 'bold'})
 
+# 2017
+
+mask_2017_1 = btc['date'] > '2017-01-01'
+mask_2017_2 = btc['date'] < '2017-12-30'
+
+btc_2017 = btc[mask_2017_1 & mask_2017_2]
+
