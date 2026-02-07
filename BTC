@@ -109,3 +109,8 @@ mask_2017_2 = btc['date'] < '2017-12-30'
 
 btc_2017 = btc[mask_2017_1 & mask_2017_2]
 
+btc_2017['month'] = btc_2017['date'].dt.month_name()
+btc_2017['year'] = btc_2017['date'].dt.year
+
+btc_2017.reset_index(drop = True, inplace = True)
+
