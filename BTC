@@ -114,3 +114,13 @@ btc_2017['year'] = btc_2017['date'].dt.year
 
 btc_2017.reset_index(drop = True, inplace = True)
 
+btc_2017.plot(
+    x = 'date',
+    y = 'open',
+    kind = 'line',
+    figsize = (10,5),
+    title = 'BTC 2017',
+    grid = True,
+    color = 'black'
+)
+
