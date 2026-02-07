@@ -69,3 +69,36 @@ chart[1].hist(
 )
 
 chart[1].set_title('Частота цены за все время BTC', fontdict ={'family': 'Times New Roman', 'size': 12, 'weight': 'bold'})
+
+fig, chart = plt.subplots(nrows=2,ncols=1, figsize = (15,10))
+
+# График цены 
+
+chart[0].scatter(
+    btc['date'],
+    btc['open'],
+    s=2,
+    color= 'yellow',
+    edgecolor = 'black'
+)
+
+chart[0].grid(True)
+chart[0].xaxis.set_major_locator(mdates.YearLocator())
+chart[0].set_title(f'График цены {name} за {year_min} - {year_max} год', fontdict = {'family': 'Times New Roman', 'size': 12, 'weight': 'bold'})
+
+# График объема
+
+chart[1].bar(
+    btc['date'],
+    btc['volume'],
+    lw =2,
+    width = 3,
+    alpha = 0.3,
+    color = 'red',
+    edgecolor = 'black'
+)
+
+chart[1].grid(True)
+chart[1].xaxis.set_major_locator(mdates.YearLocator())
+chart[1].set_title(f'График объема {name} за {year_min} - {year_max} год', fontdict = {'family': 'Times New Roman', 'size': 12, 'weight': 'bold'})
+
