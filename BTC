@@ -129,3 +129,11 @@ btc_2017.plot(
 mask_2018_1 = btc['date'] > '2018-01-01'
 mask_2018_2 = btc['date'] < '2018-12-30'
 
+btc_2018 = btc[mask_2018_1 & mask_2018_2]
+
+btc_2018 = btc_2018.sort_values(by='date', ascending=True)
+
+btc_2018['month'] = btc_2018['date'].dt.month_name()
+btc_2018['year'] = btc_2018['date'].dt.year
+
+
