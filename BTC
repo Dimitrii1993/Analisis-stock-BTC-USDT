@@ -136,4 +136,14 @@ btc_2018 = btc_2018.sort_values(by='date', ascending=True)
 btc_2018['month'] = btc_2018['date'].dt.month_name()
 btc_2018['year'] = btc_2018['date'].dt.year
 
+btc_2018.reset_index(drop=True,inplace=True)
+btc_2018
 
+btc_2018.plot(
+    x = 'date',
+    y = 'open',
+    kind = 'line',
+    figsize=(10,5),
+    title= 'BTC 2018',
+    grid = True,
+    color = 'black')
