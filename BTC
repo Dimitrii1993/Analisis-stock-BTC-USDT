@@ -147,3 +147,11 @@ btc_2018.plot(
     title= 'BTC 2018',
     grid = True,
     color = 'black')
+
+# Год 2019
+
+mask_2019_1 = btc['date'] > '2019-01-01'
+mask_2019_2 = btc['date'] < '2019-12-30'
+
+btc_2019 = btc[mask_2019_1 & mask_2019_2]
+btc_2019.reset_index(drop = True, inplace = True)
