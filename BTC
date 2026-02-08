@@ -155,3 +155,20 @@ mask_2019_2 = btc['date'] < '2019-12-30'
 
 btc_2019 = btc[mask_2019_1 & mask_2019_2]
 btc_2019.reset_index(drop = True, inplace = True)
+
+btc_2019 = btc_2019.sort_values(by = 'date', ascending = True)
+
+btc_2019['month'] = btc['date'].dt.month_name()
+btc_2019['year'] = btc['date'].dt.year
+
+btc_2019.plot(
+    x = 'date',
+    y = 'open',
+    kind = 'line',
+    title = 'BTC 2019',
+    figsize = (10,5),
+    grid = True,
+    color = 'black'
+)
+
+
