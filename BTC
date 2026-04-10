@@ -1,31 +1,5 @@
 
 
-btc['date'] = pd.to_datetime(btc['da
-
-fig, chart = plt.subplots(nrows=2,ncols=1,figsize = (13,10))
-
-chart[0].plot(
-    btc['date'],
-    btc['open'],
-    label = 'open',
-    lw = 2,
-    linestyle = '-',
-    alpha = 0.8,
-    color = 'black'
-)
-
-btc_2 = btc.copy()
-
-btc_2['volume_1'] = btc_2['volume']/10000
-
-chart[0].bar(
-    btc_2['date'],
-    btc_2['volume_1'],
-    width = 2,
-    alpha = 0.3
-)
-
-
 chart[0].xaxis.set_major_locator(mdates.YearLocator())
 chart[0].grid(True,linestyle = '--', linewidth = 0.5, alpha = 0.2, color = 'black')
 
