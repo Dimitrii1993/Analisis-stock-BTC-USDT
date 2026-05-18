@@ -1,5 +1,3 @@
-
-
 chart[0].xaxis.set_major_locator(mdates.YearLocator())
 chart[0].grid(True,linestyle = '--', linewidth = 0.5, alpha = 0.2, color = 'black')
 
